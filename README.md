@@ -91,7 +91,26 @@ These instructions will help you set up and run the springboot-webflux-demo appl
 [{"customerId":1,"customerName":"customer1"},{"customerId":2,"customerName":"customer2"},{"customerId":3,"customerName":"customer3"},{"customerId":4,"customerName":"customer4"},{"customerId":5,"customerName":"customer5"},{"customerId":6,"customerName":"customer6"},{"customerId":7,"customerName":"customer7"},{"customerId":8,"customerName":"customer8"},{"customerId":9,"customerName":"customer9"},{"customerId":10,"customerName":"customer10"}]
   # 2) Load Customers Using Stream: Returns the customer objects created using Stream rest approach.
 	GET http://localhost:9191/customers/stream
-  #  3)Load Customers Using Flux:  Returns the customer objects created using reactive rest approach based like an event.
+  # 3) Load Customers Using Flux:  Returns the customer objects created using reactive rest approach based like an event.
 	GET http://localhost:9191/customers/Fluxstream
+  ## Using Handler and Router class to use functional based rest endpoints.
+  # 4) Load Customers using Funtional End-point: Returns the customer objects created using reactive rest approach based like an event.
+	GET http://localhost:9191/router/customers
+  # 5) Find Customer Using Flux:  Returns the customer object from the current customer List.
+	GET http://localhost:9191/router/customer/{input}
+  # Example input body:
+  {
+  "customerId": 1,
+  "customerName": "example"
+  }
+  # 6) Save Customer Using Flux:  Save the customer object to the current customer List.
+	POST http://localhost:9191//router/customer/save
+  # Example input body:
+  {
+  "customerId": 10,
+  "customerName": "example1"
+  }
 ### Usage Tool / Testing
 You can use tools like Postman to test the API endpoints by sending HTTP requests to the application.
+# To Refer swagger url use this [link](http://localhost:9191/swagger-doc/webjars/swagger-ui/index.html#/)
+http://localhost:9191/swagger-doc/webjars/swagger-ui/index.html#/
